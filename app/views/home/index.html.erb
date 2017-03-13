@@ -1,23 +1,36 @@
-<div id="gantt_here" style='width:100%; height:800px;'></div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
 
-<script>
-    gantt.config.date_scale = "Week #%W";
-    gantt.config.scale_unit = "week";
-    gantt.config.scale_height = 50; 
-    gantt.config.step = 1;
-    gantt.config.subscales = [
-        {unit:"month", step:1, date:"%F"}
-    ];
+    <body class="container">
+        <div class = "container">
+            <div id="gantt_here" style='width:100%; height:800px;'></div>
+        </div>
+    </body>
     
-    //Get the year's current date
-    gantt.config.start_date = new Date(2017, 01, 1);
-    gantt.config.end_date = new Date(2017, 12, 31);
     
-
-    gantt.init("gantt_here");
-    gantt.load("<%= data_path %>");
-    
-    var dp = new dataProcessor("<%= data_path %>");
-    dp.init(gantt);
-    dp.setTransactionMode("REST");
-</script>
+    <script>
+            //
+            gantt.config.date_scale = "Week #%W";
+            gantt.config.scale_unit = "week";
+            gantt.config.scale_height = 50; 
+            gantt.config.step = 1;
+            gantt.config.subscales = [
+                {unit:"month", step:1, date:"%F"}
+            ];
+            
+            //Get the year's current date
+            gantt.config.start_date = new Date(2017, 01, 01);
+            gantt.config.end_date = new Date(2017, 12, 31);
+            
+        
+            gantt.init("gantt_here");
+            gantt.load("<%= data_path %>");
+            
+            var dp = new dataProcessor("<%= data_path %>");
+            dp.init(gantt);
+            dp.setTransactionMode("REST");
+    </script>
+</html>
