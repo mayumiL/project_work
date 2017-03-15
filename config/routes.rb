@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   #get 'home/index'
   root :to => 'home#index'
   match "home/data", :to => "home#data", :as => "data", :via => "get"

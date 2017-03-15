@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310164136) do
+ActiveRecord::Schema.define(version: 20170315165207) do
 
   create_table "links", force: :cascade do |t|
     t.integer  "source"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20170310164136) do
     t.float    "progress"
     t.integer  "sortorder"
     t.integer  "parent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.string   "team"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

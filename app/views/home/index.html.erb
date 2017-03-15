@@ -3,16 +3,14 @@
     <head>
         <meta charset="utf-8">
     </head>
-
-    <body class="container">
-        <div class = "container">
-            <div id="gantt_here" style='width:100%; height:800px;'></div>
-        </div>
-    </body>
     
+
+    <%= render 'menu'%>
+    <div id="gantt_here" style='width:100%; height:800px;'></div>
+
     
     <script>
-            //
+            //Gant configuration
             gantt.config.date_scale = "Week #%W";
             gantt.config.scale_unit = "week";
             gantt.config.scale_height = 50; 
