@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   put "home/data/task/:id", :to => "task#update"
   delete "home/data/task/:id", :to => "task#delete"
   
+  
+  #
   post "home/data/link", :to => "link#add"
   put "home/data/link/:id", :to => "link#update"
   delete "home/data/link/:id", :to => "link#delete"
